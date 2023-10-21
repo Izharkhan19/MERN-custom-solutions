@@ -2,7 +2,6 @@ import React from "react";
 import EmpDetails from "./EmpDetails";
 import NodeCRUD from "./Manage Note CRUD/NodeCRUD";
 // import UserDetails from "./Manage Note CRUD/UserDetails";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import DefaultLayout from "./View/Default/DefaultLayout";
 import Login from "./View/Authorise/Login";
