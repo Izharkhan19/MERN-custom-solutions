@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.activDate {
+  border-radius: 15px;
+  background-color: aquamarine;
+}
+.next_prev_align {
+  display: flex;
+  margin-left: 74px;
+}
+
+
+/* Calendar Styles */
+.calender_main {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.calender_buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.next_prev_align {
+  display: flex;
+  align-items: center;
+}
+
+.prev,
+.next {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: #0056b3;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.week_cell {
+  text-align: center;
+  padding: 5px;
+}
+
+.week_cell.active {
+  background-color: #007BFF;
+  color: #fff;
+}
+
+.dayWeek-view-calender {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Add more styles as needed */
+
+
+/* Add this CSS to your stylesheet or styled-components */
+.custom-navbar {
+  background-color: #f8f9fa; /* Lighter background color */
+  color: #333; /* Text color */
+}
+
+.logout-button {
+  /* Add custom styles for the logout button */
+  background: transparent;
+  color: #333; /* Button text color */
+  border: none;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  /* Add custom styles for the button on hover */
+  color: #f00; /* Change the color on hover */
+}
+
+.selectSongClass {
+  background-color: #ced6df;
+  padding: 20px;
+}

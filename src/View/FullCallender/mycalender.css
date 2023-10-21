@@ -1,0 +1,100 @@
+/* Add 3D effects to your calendar */
+.calender_main {
+    perspective: 1000px;
+  }
+  
+  .calender_buttons {
+    transform: translateZ(20px);
+  }
+  
+  .calender_body {
+    transform: translateZ(-20px);
+    transition: transform 0.3s;
+  }
+  
+  .month-view-calender {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+  
+  /* Define animations for 3D transformation */
+  @keyframes rotateX {
+    from {
+      transform: rotateX(0deg);
+    }
+    to {
+      transform: rotateX(10deg);
+    animation-timing-function: ease-in;
+    }
+  }
+  
+  @keyframes rotateY {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(10deg);
+      animation-timing-function: ease-in;
+    }
+  }
+  
+  /* Apply animations to the calendar */
+  .dayWeek-view-calender {
+    animation: rotateX 0.3s;
+    animation-fill-mode: forwards;
+  }
+  
+  /* Add depth and shadow to the calendar */
+  .dayWeek-view-calender {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transform: translateZ(10px);
+  }
+  
+  /* Style the buttons with a 3D effect */
+  .btn_css {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .btn_css:hover {
+    transform: translateZ(5px);
+  }
+  
+  /* Add 3D effect to table cells */
+  .table_cell {
+    transform: translateZ(5px);
+  }
+  
+  /* Define 3D effect for the 'Today' button */
+  .btn_css:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Style the event details with a 3D effect */
+  .event_details {
+    transform: translateZ(5px);
+  }
+  
+  /* Define styles for the tooltip */
+  .tooltip-calendar {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    transform: translateZ(10px);
+  }
+  
+  .inner-tooltip-calendar {
+    padding: 5px;
+  }
+  
+  .tooltip-calendar-data {
+    font-size: 14px;
+    transform: translateZ(0);
+  }
