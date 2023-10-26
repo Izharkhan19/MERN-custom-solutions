@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   GoogleMap,
   StandaloneSearchBox,
   LoadScript,
   Marker,
 } from "@react-google-maps/api";
-import axios from "axios";
 import BreadcrumPath from "../../CommonComponents/BreadCrum";
 
 const lib = ["places"];
@@ -45,25 +44,6 @@ function Map() {
   const onSBLoad = (ref) => {
     setSearchBox(ref);
   };
-
-  async function fnLocationDetails() {
-    try {
-      const response = await axios.get("https://ipapi.co/json");
-      const data = response.data;
-      setCenter({
-        lat: data.latitude,
-        lng: data.longitude,
-      });
-      // setlatitude(data.latitude);
-      // setlongitude(data.longitude);
-      // settimezone(data.timezone);
-    } catch (error) {
-      console.error("Error fetching location data:", error);
-    }
-  }
-  useEffect(() => {
-    fnLocationDetails();
-  }, []);
 
   return (
     <>

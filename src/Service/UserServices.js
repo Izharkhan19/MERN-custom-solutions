@@ -1,11 +1,15 @@
 import axios from "axios";
 import API_BASE_PATH from "../CommonServices";
 
-export const getUserList = async () => {
+export const getUserList = async (filters, sortBy, sortOrder, page, limit) => {
   try {
     const response = await axios({
       // method: "GET",
-      url: API_BASE_PATH.BasePath + "users",
+      url:
+        API_BASE_PATH.BasePath +
+        `users?filters=${encodeURIComponent(
+          JSON.stringify({ search: filters })
+        )}&sortBy=${sortBy}&sortOrder=${sortOrder}&page=${page}&limit=${limit}}`,
       //   data: ReqData,
       headers: {
         // "Content-Type": "application/json",

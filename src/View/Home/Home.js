@@ -74,11 +74,9 @@ const Home = () => {
         <div class="content">
           <div class="text-content">
             <h1 class="white">
-              Providing Special care For <strong>Your Pets!</strong>
+              Learn and implement <strong>Your Knowledge...!</strong>
             </h1>
-            <h4 class="blackish">
-              We offer special services for special pets!
-            </h4>
+            <h4 class="blackish">We make your future better.</h4>
             <div class="two-button">
               <button class="w-btn btn">View Our Services</button>
               <button class="t-btn btn">Hire Us</button>
