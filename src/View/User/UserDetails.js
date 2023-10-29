@@ -29,19 +29,48 @@ function UserDetails() {
     let res = await getUserList(filters, sortBy, sortOrder, page, limit);
     setLoading(false);
     if (res.data) {
-      setfetchUserAllData(res.data);
+      let prevDataMerge = fetchUserAllData;
+      let OldPostID = "";
+      prevDataMerge.forEach((element) => {
+        OldPostID = OldPostID + "#" + element._id + "#";
+      });
+      res.data.forEach((element) => {
+        if (OldPostID.indexOf("#" + element._id + "#") < 0) {
+          prevDataMerge.push(element);
+        }
+      });
+      if (fetchUserAllData.length !== prevDataMerge.length) {
+        setfetchUserAllData([...prevDataMerge]);
+      }
+
+      // setfetchUserAllData(res.data);
     } else {
       setfetchUserAllData([]);
     }
   }
 
   function getAllRecords() {
-    fetchFormData("", "", "", 1, 10000);
+    let totalPost = document.getElementsByClassName("data-post");
+    let _Page = totalPost.length / 4 + 1;
+    fetchFormData("", "", "", _Page, 4);
   }
+
+  const handleScroll = () => {
+    const { scrollTop, clientHeight, scrollHeight } = document.documentElement;
+    if (scrollTop + clientHeight >= scrollHeight - 5) {
+      getAllRecords();
+    }
+  };
 
   useEffect(() => {
     getAllRecords();
-  }, []);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // useEffect(() => {
+  //   getAllRecords();
+  // }, []);
 
   async function DeleteData(id) {
     let input = {
@@ -67,7 +96,7 @@ function UserDetails() {
                 {!loading ? (
                   fetchUserAllData && fetchUserAllData ? (
                     fetchUserAllData.map((itm, idx) => (
-                      <Col md="3">
+                      <Col md="3" key={itm._id} className="data-post">
                         <Card style={{ width: "20rem" }} className="d-flex">
                           <Card.Img
                             variant="top"

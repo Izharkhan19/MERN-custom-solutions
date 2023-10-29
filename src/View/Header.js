@@ -82,7 +82,7 @@ function BasicExample() {
             >
               Map
             </Nav.Link>
-            <Nav.Link onClick={() => navigate("/chat-gpt")}>Chat-GPT</Nav.Link>
+            {/* <Nav.Link onClick={() => navigate("/chat-gpt")}>Chat-GPT</Nav.Link> */}
           </Nav>
         </Navbar.Collapse>
         <Row>
