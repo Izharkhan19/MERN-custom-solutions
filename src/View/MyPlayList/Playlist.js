@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 // import AddPlayListModal from "../../Manage Note CRUD/Models/AddPlayListModal";
-import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import { Button, Card, Col, Container, Dropdown, Row } from "react-bootstrap";
 import BreadcrumPath from "../../CommonComponents/BreadCrum";
 import { DeleteSongByID, getSongList } from "../../Service/PlaylistService";
 import moment from "moment/moment";
 import { ToastError, ToastSuccess } from "../../CommonComponents/Toasters";
 import AddPlayListModal from "../../Models/AddPlayListModal";
 import "./playlist.css";
+import ShareComponent from "../Share/CommonShareButton";
 
 const Playlist = () => {
   const pageNav = [
@@ -134,34 +135,57 @@ const Playlist = () => {
                           >
                             {itm.fileTitle}
                           </p>
+
                           <footer className="blockquote-footer">
                             <cite title="Source Title">{itm.yourName}</cite>
-                            <div className="text-end">
-                              <cite title="Source Title">
-                                Remove Song
-                                <svg
+                            <Row>
+                              <Col md={8}>
+                                <div>
+                                  <ShareComponent
+                                    imageUrl={"https://www.google.com/"}
+                                    linkUrl={itm.filelink}
+                                    title={""}
+                                  />
+                                </div>
+                              </Col>
+
+                              <Col md={2} className="px-4"></Col>
+                              <Col md={2}>
+                                <Button
+                                  variant=""
                                   style={{
-                                    cursor: "pointer",
+                                    width: "50px",
+                                    border: "1px solid black",
                                   }}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  x="0px"
-                                  y="0px"
-                                  width="25"
-                                  height="25"
-                                  viewBox="0 0 24 24"
-                                  style={{ cursor: "pointer" }}
-                                  onClick={() => DeleteData(itm._id)}
                                 >
-                                  <path d="M3 3H21V5H3z"></path>
-                                  <path d="M16.1,22H7.9c-1,0-1.9-0.7-2-1.7L4,4.1l2-0.2L7.9,20l8.2,0L18,3.9l2,0.2l-1.9,16.1C18,21.3,17.1,22,16.1,22z"></path>
-                                  <path
-                                    d="M5,4l1.9,16.1c0.1,0.5,0.5,0.9,1,0.9h8.2 c0.5,0,0.9-0.4,1-0.9L19,4H5z"
-                                    opacity=".3"
-                                  ></path>
-                                  <path d="M15 3L15 4 9 4 9 3 10 2 14 2z"></path>
-                                </svg>
-                              </cite>
-                            </div>
+                                  <div>
+                                    <cite title="Source Title">
+                                      <svg
+                                        style={{
+                                          cursor: "pointer",
+                                        }}
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        x="0px"
+                                        y="0px"
+                                        width="25"
+                                        height="25"
+                                        viewBox="0 0 24 24"
+                                        style={{ cursor: "pointer" }}
+                                        onClick={() => DeleteData(itm._id)}
+                                      >
+                                        <path d="M3 3H21V5H3z"></path>
+                                        <path d="M16.1,22H7.9c-1,0-1.9-0.7-2-1.7L4,4.1l2-0.2L7.9,20l8.2,0L18,3.9l2,0.2l-1.9,16.1C18,21.3,17.1,22,16.1,22z"></path>
+                                        <path
+                                          d="M5,4l1.9,16.1c0.1,0.5,0.5,0.9,1,0.9h8.2 c0.5,0,0.9-0.4,1-0.9L19,4H5z"
+                                          opacity=".3"
+                                        ></path>
+                                        <path d="M15 3L15 4 9 4 9 3 10 2 14 2z"></path>
+                                      </svg>
+                                    </cite>
+                                  </div>
+                                </Button>
+                              </Col>
+                            </Row>
                           </footer>
                         </blockquote>
                       </Card.Body>

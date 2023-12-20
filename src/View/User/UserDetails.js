@@ -26,6 +26,7 @@ function UserDetails() {
 
   async function fetchFormData(filters, sortBy, sortOrder, page, limit) {
     setLoading(true);
+
     let res = await getUserList(filters, sortBy, sortOrder, page, limit);
     setLoading(false);
     if (res.data) {
@@ -49,21 +50,22 @@ function UserDetails() {
     }
   }
 
-  function getAllRecords() {
+  async function getAllRecords() {
     let totalPost = document.getElementsByClassName("data-post");
     let _Page = totalPost.length / 4 + 1;
-    fetchFormData("", "", "", _Page, 4);
+    await fetchFormData("", "", "", _Page, 4);
   }
 
-  const handleScroll = () => {
+  const handleScroll = async () => {
     const { scrollTop, clientHeight, scrollHeight } = document.documentElement;
     if (scrollTop + clientHeight >= scrollHeight - 5) {
-      getAllRecords();
+      await getAllRecords();
     }
   };
 
   useEffect(() => {
     getAllRecords();
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
@@ -78,7 +80,7 @@ function UserDetails() {
     };
     let res = await DeleteUserByID(input);
     if (res.data) {
-      getAllRecords();
+      await getAllRecords();
       ToastSuccess("User Deleted Successfully.");
     } else {
       ToastError(res.data.message);
@@ -92,9 +94,17 @@ function UserDetails() {
         <Row>
           <Card>
             <Card.Body>
-              <Row xs={1} md={2} className="g-4">
+              <Row
+                xs={1}
+                md={2}
+                className={`g-4 ${
+                  fetchUserAllData.length !== 0
+                    ? "justify-content-start"
+                    : "justify-content-center"
+                }`}
+              >
                 {!loading ? (
-                  fetchUserAllData && fetchUserAllData ? (
+                  fetchUserAllData && fetchUserAllData.length !== 0 ? (
                     fetchUserAllData.map((itm, idx) => (
                       <Col md="3" key={itm._id} className="data-post">
                         <Card style={{ width: "20rem" }} className="d-flex">

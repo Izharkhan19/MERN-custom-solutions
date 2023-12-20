@@ -3,6 +3,7 @@ import { Col, Form, Row } from "react-bootstrap";
 import "./login.css";
 import { useNavigate } from "react-router-dom";
 import { ToastError, ToastSuccess } from "../../CommonComponents/Toasters";
+import { registeruser } from "../../Service/AuthLoginService";
 const RegisterUser = () => {
   const navigate = useNavigate();
 
@@ -12,22 +13,16 @@ const RegisterUser = () => {
     password: "",
   });
 
-  const handleRegister = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
     if (input.userName !== "" && input.email !== "" && input.password !== "") {
-      fetch(`http://localhost:3000/api/registeruser`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(input),
-      })
-        .then((res) => {
-          return res.json();
-        })
-        .then((data) => {
-          console.log(data);
-        });
-      navigate("/");
-      ToastSuccess("Registration Successfull");
+      let res = await registeruser(input);
+      if (res.data) {
+        navigate("/");
+        ToastSuccess("Registration Successfull");
+      } else {
+        ToastError("Something went Wrong.");
+      }
     } else {
       ToastError("All Fields are required.");
     }

@@ -83,6 +83,7 @@ function BasicExample() {
               Map
             </Nav.Link>
             {/* <Nav.Link onClick={() => navigate("/chat-gpt")}>Chat-GPT</Nav.Link> */}
+            <Nav.Link onClick={() => navigate("/register-signin")}>Facebook</Nav.Link>
           </Nav>
         </Navbar.Collapse>
         <Row>
