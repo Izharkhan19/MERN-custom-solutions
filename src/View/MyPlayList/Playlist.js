@@ -153,6 +153,7 @@ const Playlist = () => {
                               <Col md={2}>
                                 <Button
                                   variant=""
+                                  
                                   style={{
                                     width: "50px",
                                     border: "1px solid black",
