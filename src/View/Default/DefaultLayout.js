@@ -27,7 +27,7 @@ const DefaultLayout = () => {
         <Route path="/map" element={<Map />} />
         <Route path="/chat-gpt" element={<ChatGPT />} />
         <Route path="/playlist" element={<Playlist />} />
-        <Route path="/register-signin" element={<FB />} />
+        {/* <Route path="/register-signin" element={<FB />} /> */}
       </Routes>
       {/* <Footer /> */}
     </div>
