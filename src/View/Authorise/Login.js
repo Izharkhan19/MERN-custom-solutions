@@ -14,10 +14,12 @@ const Login = () => {
     userName: "",
     password: "",
   });
+  const [handleLoding, setHandleLoding] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (input.userName !== "" && input.password !== "") {
+      setHandleLoding(true);
       let res = await getRegisterUserList();
       if (res.data) {
         let data = res.data.filter(
@@ -31,8 +33,10 @@ const Login = () => {
           ToastError("Unauthorize User Credentials...!");
         }
       }
+      setHandleLoding(false);
     } else {
       ToastError("Enter username & password please.");
+      setHandleLoding(false);
     }
   };
 
@@ -49,44 +53,76 @@ const Login = () => {
   });
 
   return (
-    <div className="login-form-container">
-      <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3">
-          <Form.Control
-            id="floatingInputCustom"
-            type="text"
-            placeholder="UserName"
-            onChange={(e) =>
-              setInput({
-                ...input,
-                userName: e.target.value,
-              })
-            }
-          />
-          {/* <Form.Label>Email address</Form.Label> */}
-        </Form.Group>
-        <Form.Group>
-          <Form.Control
-            id="floatingPasswordCustom"
-            type="text"
-            placeholder="Password"
-            onChange={(e) =>
-              setInput({
-                ...input,
-                password: e.target.value,
-              })
-            }
-          />
-          {/* <Form.Label>Password</Form.Label> */}
-        </Form.Group>
-        <button className="btn btn-primary" type="submit">
-          Login
-        </button>
-        <div className="text-center mt-3">
-          <Link to={"/registeruser"}>Register User</Link>
-        </div>
-      </Form>
-    </div>
+    // <Form onSubmit={handleSubmit}>
+    //   <Form.Group className="mb-3">
+    //     <Form.Control
+    //       id="floatingInputCustom"
+    //       type="text"
+    //       placeholder="UserName"
+    //       onChange={(e) =>
+    //         setInput({
+    //           ...input,
+    //           userName: e.target.value,
+    //         })
+    //       }
+    //     />
+    //     {/* <Form.Label>Email address</Form.Label> */}
+    //   </Form.Group>
+    //   <Form.Group>
+    //     <Form.Control
+    //       id="floatingPasswordCustom"
+    //       type="text"
+    //       placeholder="Password"
+    //       onChange={(e) =>
+    //         setInput({
+    //           ...input,
+    //           password: e.target.value,
+    //         })
+    //       }
+    //     />
+    //     {/* <Form.Label>Password</Form.Label> */}
+    //   </Form.Group>
+    //   <button className="btn btn-primary" type="submit" disabled={handleLoding}>
+    //     Login
+    //   </button>
+    //   <div className="text-center mt-3">
+    //     <Link to={"/registeruser"}>Register User</Link>
+    //   </div>
+    // </Form>
+    <Form className="custom-form" onSubmit={handleSubmit}>
+      <Form.Group className="mb-3">
+        <Form.Control
+          id="floatingInputCustom"
+          type="text"
+          placeholder="UserName"
+          onChange={(e) =>
+            setInput({
+              ...input,
+              userName: e.target.value,
+            })
+          }
+        />
+      </Form.Group>
+      <Form.Group>
+        <Form.Control
+          id="floatingPasswordCustom"
+          type="password"
+          placeholder="Password"
+          onChange={(e) =>
+            setInput({
+              ...input,
+              password: e.target.value,
+            })
+          }
+        />
+      </Form.Group>
+      <button className="btn btn-primary" type="submit" disabled={handleLoding}>
+        Login
+      </button>
+      <div className="text-center mt-3">
+        <Link to={"/registeruser"}>Register User</Link>
+      </div>
+    </Form>
   );
 };
 

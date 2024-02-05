@@ -1,9 +1,26 @@
 import React from "react";
 import BreadcrumPath from "../../CommonComponents/BreadCrum";
-import FullCalender from "../Callender/FullCalender";
 import "./home.css";
+import { useNavigate } from "react-router-dom";
+import { Button, Carousel } from "react-bootstrap";
+import facebook from "../../assets/socialmediaSVG/facebook.svg";
+import instagram from "../../assets/socialmediaSVG/instagram.svg";
+import linkedin from "../../assets/socialmediaSVG/linkedin.svg";
+import twitter from "../../assets/socialmediaSVG/twitter.svg";
+import whatsapp from "../../assets/socialmediaSVG/whatsapp.svg";
+import logo from "../../assets/logo.jpg";
+import Chatlogin from "../../assets/ChatAppPics/Chatlogin.png";
+import ChatScreen from "../../assets/ChatAppPics/ChatScreen.png";
+import ChatProfile from "../../assets/ChatAppPics/ChatProfile.png";
+import ChatHome from "../../assets/ChatAppPics/ChatHome.png";
+import arjCourse from "../../assets/ArjunGrpPics/arjCourse.png";
+import arjDetails from "../../assets/ArjunGrpPics/arjDetails.png";
+import arjEvent from "../../assets/ArjunGrpPics/arjEvent.png";
+import arjHome from "../../assets/ArjunGrpPics/arjHome.png";
+import arjLogin from "../../assets/ArjunGrpPics/arjLogin.png";
 
 const Home = () => {
+  let navigate = useNavigate();
   const pageNav = [
     {
       name: "Home",
@@ -21,65 +38,20 @@ const Home = () => {
     <>
       <BreadcrumPath pageNav={pageNav} />
       <section id="one">
-        {/* <nav id="nav">
-          <div class="nav-logo">
-            <div class="nav-heading">
-              <span href="#">
-                <i class="fas fa-paw logo white"></i>Dogs Care
-              </span>
-            </div>
-
-            <div class="hamburger">
-              <a href="#">
-                <i class="far fa-moon white "></i>
-              </a>
-              <a href="#">
-                <i class="fas fa-bars "></i>
-              </a>
-            </div>
-          </div>
-
-          <ul class="nav-links">
-            <li>
-              <a>HOME</a>
-            </li>
-            <li>
-              <a>ABOUT</a>
-            </li>
-            <li>
-              <a>SERVICES</a>
-            </li>
-            <li>
-              <a>PAGES </a>
-            </li>
-            <li>
-              <a>CONTACT</a>
-            </li>
-
-            <div class="search-section">
-              <span class="search">
-                <input type="search" placeholder="Enter to search" />{" "}
-                <button class="search-btn">
-                  <i class="fas fa-search"></i>
-                </button>
-              </span>
-            </div>
-
-            <span>
-              <i class="far fa-moon white night"></i>
-            </span>
-          </ul>
-        </nav> */}
-
         <div class="content">
           <div class="text-content">
             <h1 class="white">
-              Learn and implement <strong>Your Knowledge...!</strong>
+              Learn and implement{" "}
+              <strong>
+                {" "}
+                &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Your
+                Knowledge...!
+              </strong>
             </h1>
-            <h4 class="blackish">We make your future better.</h4>
+            {/* <h4 class="blackish">We make your future better.</h4> */}
             <div class="two-button">
-              <button class="w-btn btn">View Our Services</button>
-              <button class="t-btn btn">Hire Us</button>
+              {/* <button class="w-btn btn">View Our Services</button> */}
+              {/* <button class="t-btn btn">Hire Us</button> */}
             </div>
           </div>
         </div>
@@ -88,7 +60,7 @@ const Home = () => {
       <section id="one-half" class="goblack">
         <span>
           <img
-            src="https://images.unsplash.com/photo-1581579186913-45ac3e6efe93?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+            src="https://img.freepik.com/free-photo/about-as-service-contact-information-concept_53876-138509.jpg"
             alt=""
           />
         </span>
@@ -97,9 +69,11 @@ const Home = () => {
           <div class="half__text">
             <h1>About Us</h1>
             <p>
-              Orci urna. In et augue ornare, tempor massa in, luctus sapien.
-              Proin a diam et dui fermentum dolor molestie vel id neque. Donec
-              sed tempus enim, a congue risus. Pellen tesqu.
+              We specialize in custom component design and development. Our
+              dedicated team crafts tailored solutions, ensuring precision and
+              innovation. From hardware to software, we collaborate closely with
+              clients to exceed expectations. Trust us to bring your unique
+              component ideas to life with expertise and commitment.
             </p>
           </div>
           <div class="half__boxes">
@@ -109,8 +83,9 @@ const Home = () => {
               </span>
               <h2>Our Mission</h2>
               <p>
-                In a diam et dui elit, orci urna vel id neque. Donec sed tempus
-                enims.
+                Our Mission is to Precision and creativity in custom solutions.
+                We aim to exceed expectations, empower innovation, and bring
+                unique visions to life.
               </p>
             </div>
             <div class="box">
@@ -119,8 +94,9 @@ const Home = () => {
               </span>
               <h2>Our Vision</h2>
               <p>
-                In a diam et dui elit, orci urna vel id neque. Donec sed tempus
-                enims.
+                Our vision is to be a pioneer in innovative solutions, shaping a
+                future where customized excellence drives progress and exceeds
+                expectations.
               </p>
             </div>
           </div>
@@ -131,8 +107,8 @@ const Home = () => {
         <div class="heading ">
           <h1>What We Do</h1>
           <p class="lightblack">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque, eaque ipsa quae ab illo inventore.
+            We are dedicated to designing and building personalized, custom
+            solutions to meet your specific needs and preferences.
           </p>
         </div>
 
@@ -140,279 +116,193 @@ const Home = () => {
           <div class="info">
             <span>
               <img
-                src="https://raw.githubusercontent.com/Nis-chal/dog_website_clone/main/images/img1.jpg"
+                src="https://png.pngtree.com/png-clipart/20210803/ourmid/pngtree-headphones-listening-to-music-melody-png-image_3774398.jpg"
                 alt=""
               />
             </span>
             <div class="info__text">
-              <h1>Donec sed teus enime</h1>
+              <h1>Music Play List</h1>
 
-              <p>
-                Sed do eiusmod tempor incididunt ut labore et dolore magna
-                aliqua.
-              </p>
-              <h5 class="">READ MORE</h5>
+              <p>Where you can create your own liked song's playlist.</p>
+              <h5
+                style={{ cursor: "pointer" }}
+                onClick={() => navigate("/playlist")}
+              >
+                VISIT PAGE
+              </h5>
             </div>
           </div>
           <div class="info">
             <span>
               <img
-                src="https://raw.githubusercontent.com/Nis-chal/dog_website_clone/main/images/img2.jpg"
+                src="https://printify.com/wp-content/uploads/2022/11/Custom-Calendars-Printify.jpg"
                 alt=""
               />
             </span>
             <div class="info__text">
-              <h1>It's enim ad minim aute</h1>
+              <h1>Custom Calender</h1>
 
               <p>
-                Sed do eiusmod tempor incididunt ut labore et dolore magna
-                aliqua.
+                Callender that allows you to check dates in Day, Week and Month
+                wise.
               </p>
-
-              <h5 class="">READ MORE</h5>
+              <h5
+                style={{ cursor: "pointer" }}
+                onClick={() => navigate("/calendar")}
+              >
+                VISIT PAGE
+              </h5>
             </div>
           </div>
           <div class="info">
             <span>
               <img
-                src="https://raw.githubusercontent.com/Nis-chal/dog_website_clone/main/images/img3.jpg"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLqvBYlDPJD95EmMauRHxD0k13wS4GhUB20rLjRVXniA&s"
                 alt=""
               />
             </span>
             <div class="info__text">
-              <h1>Ullamco laboris nisi uts</h1>
+              <h1>The Map</h1>
 
-              <p>
-                Sed do eiusmod tempor incididunt ut labore et dolore magna
-                aliqua.
-              </p>
+              <p>It allows user to view or reach anywhere in the word.</p>
 
-              <h5 class="">READ MORE</h5>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="four" class="goblack">
-        <article>
-          <h1>Happy Customers</h1>
-          <p>
-            Lorem ipsum viverra feugiat. Pellen tesque libero ut justo, ultrices
-            in ligula. Semper at tempufddfel. Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Non quae, fugiat.
-          </p>
-
-          <p>
-            Semper at tempufddfel. Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Non quae, fugiat. Lorem ipsum viverra feugiat.
-            Pellen tesque libero ut justo, ultrices in ligula.
-          </p>
-
-          <div class="article__icon">
-            <div class="customer__info">
-              <span>
-                <i class="fas fa-user-plus"></i> 100K+
-              </span>
-              <pre> Customers</pre>
-            </div>
-
-            <div class="customer__info">
-              <span>
-                <i class="fas fa-thumbs-up"></i> 100%
-              </span>
-              <pre> Satisfaction</pre>
-            </div>
-          </div>
-        </article>
-
-        <div class="four__info">
-          <div class="some__info">
-            <span>
-              <img
-                src="https://raw.githubusercontent.com/Nis-chal/dog_website_clone/main/images/testi1.jpg"
-                alt=""
-              />
-            </span>
-            <div class="four__text">
-              <h1>&#8220</h1>
-              <p>
-                Dsuis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est
-                laborum. "
-              </p>
-
-              <h4>Mario Spe</h4>
-            </div>
-          </div>
-
-          <div class="some__info">
-            <span>
-              <img
-                src="https://raw.githubusercontent.com/Nis-chal/dog_website_clone/main/images/testi2.jpg"
-                alt=""
-              />
-            </span>
-            <div class="four__text">
-              <h1>&#8220</h1>
-              <p>
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                quae ab illo inventore. "
-              </p>
-              <h4>Petey Cru</h4>
+              <h5
+                style={{ cursor: "pointer" }}
+                onClick={() => navigate("/map")}
+              >
+                VISIT PAGE
+              </h5>
             </div>
           </div>
         </div>
       </section>
 
       <section id="gallery">
-        <div class="heading ">
-          <h1>Our Gallery</h1>
-          <p class="lightblack">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque, eaque ipsa quae ab illo inventore.
-          </p>
-        </div>
-        <div class="gallery__container">
-          <div class="first__row row">
-            <span>
-              <img
-                class="shine"
-                src="https://raw.githubusercontent.com/Nis-chal/dog_website_clone/main/images/g1.jpg"
-                alt=""
-              />
-            </span>
-            <span>
-              <img
-                src="https://raw.githubusercontent.com/Nis-chal/dog_website_clone/main/images/g22.jpg"
-                alt=""
-              />
-            </span>
-            <span>
-              <img
-                src="https://raw.githubusercontent.com/Nis-chal/dog_website_clone/main/images/g3.jpg"
-                alt=""
-              />
-            </span>
-            <span>
-              <img
-                src="https://raw.githubusercontent.com/Nis-chal/dog_website_clone/main/images/g4.jpg"
-                alt=""
-              />
-            </span>
+        <div className="container">
+          <div className="heading">
+            <h1>Our Products</h1>
+            <p className="lightblack">
+              Discover excellence with our products. From innovative tech to
+              user-friendly designs, we're dedicated to enhancing your
+              lifestyle. Explore efficiency and reliability that exceeds
+              expectations.
+            </p>
           </div>
-          <div class="second__row row">
-            <div class="first__column">
-              <span>
-                <img
-                  src="https://raw.githubusercontent.com/Nis-chal/dog_website_clone/main/images/g8.jpg"
-                  alt=""
-                />
-              </span>
-              <span>
-                <img
-                  src="https://raw.githubusercontent.com/Nis-chal/dog_website_clone/main/images/g6.jpg"
-                  alt=""
-                />
-              </span>
+          <div className="row">
+            <div className="col-md-6">
+              <div className="gallery__container">
+                <Carousel data-bs-theme="dark">
+                  <Carousel.Item>
+                    <img
+                      src={Chatlogin}
+                      alt=""
+                      width={"100%"}
+                      height={"400vh"}
+                    />
+                  </Carousel.Item>
+                  <Carousel.Item>
+                    <img
+                      src={ChatHome}
+                      alt=""
+                      width={"100%"}
+                      height={"400vh"}
+                    />
+                  </Carousel.Item>
+                  <Carousel.Item>
+                    <img
+                      src={ChatProfile}
+                      alt=""
+                      width={"100%"}
+                      height={"400vh"}
+                    />
+                  </Carousel.Item>
+                  <Carousel.Item>
+                    <img
+                      src={ChatScreen}
+                      alt=""
+                      width={"100%"}
+                      height={"400vh"}
+                    />
+                  </Carousel.Item>
+                </Carousel>
+              </div>
+              <div class="info__text">
+                <a
+                  style={{ textDecoration: "none", cursor: "pointer" }}
+                  href="https://eazzy-chat.onrender.com/"
+                  target="_blank"
+                >
+                  <h5>VISIT SITE... ></h5>
+                </a>
+              </div>
             </div>
-            <span class="big__image">
-              <img
-                src="https://raw.githubusercontent.com/Nis-chal/dog_website_clone/main/images/g9.jpg"
-                alt=""
-              />
-            </span>
-            <div class="first__column">
-              <span>
-                <img
-                  src="https://raw.githubusercontent.com/Nis-chal/dog_website_clone/main/images/g7.jpg"
-                  alt=""
-                />
-              </span>
-              <span>
-                <img
-                  src="https://raw.githubusercontent.com/Nis-chal/dog_website_clone/main/images/g5.jpg"
-                  alt=""
-                />
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="five" class="goblack">
-        <div class="dog__image">
-          <img
-            src="https://raw.githubusercontent.com/Nis-chal/dog_website_clone/main/images/dog2.png"
-            alt=""
-          />
-        </div>
-        <div class="dog__container">
-          <div class="dog__boxes">
-            <div class="dog__box">
-              <span>
-                <i class="fas fa-thumbs-up"></i>
-              </span>
-              <h4>Dog Sitting</h4>
-              <p>
-                Lorem ante ipsum primis in faucibus orci luctus eted ultrices
-                posuere.
-              </p>
-            </div>
-            <div class="dog__box">
-              <span>
-                <i class="fas fa-paw"></i>
-              </span>
-              <h4>Dog Sitting</h4>
-              <p>
-                Lorem ante ipsum primis in faucibus orci luctus eted ultrices
-                posuere.
-              </p>
-            </div>
-          </div>
-          <div class="dog__boxes">
-            <div class="dog__box">
-              <span>
-                <i class="fas fa-bullhorn"></i>
-              </span>
-              <h4>Dog Sitting</h4>
-              <p>
-                Lorem ante ipsum primis in faucibus orci luctus eted ultrices
-                posuere.
-              </p>
-            </div>
-            <div class="dog__box">
-              <span>
-                <i class="fas fa-cut"></i>
-              </span>
-              <h4>Dog Sitting</h4>
-              <p>
-                Lorem ante ipsum primis in faucibus orci luctus eted ultrices
-                posuere.
-              </p>
+            <div className="col-md-6">
+              <div className="gallery__container">
+                <Carousel data-bs-theme="dark">
+                  <Carousel.Item>
+                    <img
+                      src={arjCourse}
+                      alt=""
+                      width={"100%"}
+                      height={"400vh"}
+                    />
+                  </Carousel.Item>
+                  <Carousel.Item>
+                    <img
+                      src={arjDetails}
+                      alt=""
+                      width={"100%"}
+                      height={"400vh"}
+                    />
+                  </Carousel.Item>
+                  <Carousel.Item>
+                    <img
+                      src={arjEvent}
+                      alt=""
+                      width={"100%"}
+                      height={"400vh"}
+                    />
+                  </Carousel.Item>
+                  <Carousel.Item>
+                    <img src={arjHome} alt="" width={"100%"} height={"400vh"} />
+                    <Carousel.Caption>
+                      <h5>Second slide label</h5>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      </p>
+                    </Carousel.Caption>
+                  </Carousel.Item>
+                  <Carousel.Item>
+                    <img
+                      src={arjLogin}
+                      alt=""
+                      width={"100%"}
+                      height={"400vh"}
+                    />
+                  </Carousel.Item>
+                </Carousel>
+              </div>
+              <div class="info__text">
+                <a
+                  style={{ textDecoration: "none", cursor: "pointer" }}
+                  href="https://arjun-group.vercel.app/"
+                  target="_blank"
+                >
+                  <h5>VISIT SITE... ></h5>
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </section>
-
-      <section id="six">
-        <h5>PET LOVERS</h5>
-        <h1>Our Team Is Filled With Highly Dedicated Pet Lovers</h1>
-
-        <button class="btn w-btn">Read More</button>
       </section>
 
       <section id="seven" class="goblack">
         <div class="heading ">
-          <h1>Latest News</h1>
-          <p class="lightblack">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque, eaque ipsa quae ab illo inventore
-          </p>
+          <h1>Customise With Us</h1>
+          <p class="lightblack">"Crafting Uniqueness, Tailoring Innovation."</p>
         </div>
 
-        <div class="container container__bg goblack">
+        {/* <div class="container container__bg goblack">
           <div class="info goblack">
             <span>
               <img
@@ -455,71 +345,104 @@ const Home = () => {
               <h5 class="">READ MORE ></h5>
             </div>
           </div>
-        </div>
+        </div> */}
       </section>
 
       <footer id="eight">
         <div class="footer__container">
           <div class="dog__care ">
-            <span href="#">
-              <i class="fas fa-paw "></i>
-              Dogs Care
-            </span>
+            <h3>CUSTOM COMP.</h3>
+
             <p>
-              Duis imperdiet sapien tortor, vitae congue diam auctor vitae.
-              Aliquam eget turpis ornare, euismod ligul aeget, enenatis dui.
+              We created Music playlist, Live Callender, Live Word map, User
+              related CRUP Opperaion component with the use of (MERN)
+              Technology.
             </p>
           </div>
           <div class="dog__categories">
             <h3>CATEGORIES</h3>
             <div class="categories">
               <ul>
-                <li> Dog</li>
-                <li> Dog Care</li>
-                <li> Pets</li>
-                <li> Uncategorized</li>
+                <li> Music</li>
+                <li> Organization or Productivity</li>
+                <li> Navigation</li>
+                <li> Data Management</li>
               </ul>
-              <ul>
+              {/* <ul>
                 <li> May 2021</li>
                 <li> April 2021</li>
-              </ul>
+              </ul> */}
             </div>
           </div>
           <div class="newsletter">
-            <h3>NEWSLETTER</h3>
-            <h3>SUBSCRIBE HERE NOW</h3>
-            <span>
-              <input type="text" placeholder="Email Address" />
-              <button class="btn">
-                <i class="far fa-paper-plane"></i>{" "}
-              </button>
-            </span>
-            <p>
-              Subscribe to our mailing list and get updates to your email inbox.
-            </p>
+            <img src={logo} alt="" width={"100%"} height={"170vh"} />
           </div>
         </div>
         <div class="copyright">
           <p>
-            &#169; 2021 Dogs Care. All Rights Reserved | WordPress Theme by{" "}
-            <strong>W3Layouts.</strong>{" "}
+            &#169; Design and Developed by -<strong> Izhar khan.</strong>{" "}
           </p>
           <div class="share">
-            <div>
-              <i class="fab fa-facebook-f"></i>
-            </div>
-            <div>
-              <i class="fab fa-linkedin-in"></i>
-            </div>
-            <div>
-              <i class="fab fa-twitter"></i>
-            </div>
-            <div>
-              <i class="fab fa-google-plus-g"></i>
-            </div>
-            <div>
-              <i class="fab fa-github"></i>
-            </div>
+            <p>You Can find me on : &nbsp;</p>
+            <a
+              href="https://www.linkedin.com/in/izhar-khan-715705206/"
+              target="_blank"
+              rel="noreferrer"
+              className="icon-colour  home-social-icons"
+            >
+              <img
+                src={linkedin}
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                alt="My SVG Image"
+              />
+            </a>
+            &nbsp;&nbsp;
+            <a
+              href="https://twitter.com/Izharkhan0030"
+              target="_blank"
+              rel="noreferrer"
+              className="icon-colour  home-social-icons"
+            >
+              <img
+                src={twitter}
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                alt="My SVG Image"
+              />
+            </a>
+            &nbsp;&nbsp;
+            <a
+              href="https://wa.me/7737510030"
+              target="_blank"
+              rel="noreferrer"
+              className="icon-colour home-social-icons"
+            >
+              <img
+                src={whatsapp}
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                alt="My SVG Image"
+              />
+            </a>
+            &nbsp; &nbsp;
+            <a
+              href="https://www.instagram.com/izhaarkhaan"
+              target="_blank"
+              rel="noreferrer"
+              className="icon-colour home-social-icons"
+            >
+              <img
+                src={instagram}
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                alt="My SVG Image"
+              />
+            </a>
           </div>
         </div>
       </footer>

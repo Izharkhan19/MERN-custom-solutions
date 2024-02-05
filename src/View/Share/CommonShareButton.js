@@ -95,7 +95,7 @@ const ShareComponent = ({ imageUrl, linkUrl, title }) => {
     <>
       <div className="d-flex">
         <Button
-          style={{ width: "50px", border:"1px solid black" }}
+          style={{ width: "50px", border: "1px solid black" }}
           variant=""
           onClick={() => setHandleShare(!handleShare)}
         >

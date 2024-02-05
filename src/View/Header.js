@@ -2,26 +2,21 @@ import { Button, Col, Row } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ToastSuccess } from "../CommonComponents/Toasters";
 import { useState } from "react";
+import logo from "../assets/logo.jpg";
 
 function BasicExample() {
   let navigate = useNavigate();
   let location = useLocation();
   const [ActiveTab, setActiveTab] = useState("/home");
-  ;
+
   return (
     <Navbar expand="lg" className="custom-navbar">
       <Container fluid>
         <Navbar.Brand onClick={() => navigate("/home")}>
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnHdepasuGrlgoqdvx9lP0b5KJ1a06TJm83A&usqp=CAU"
-            alt=""
-            width={"100px"}
-            height={"70px"}
-          />
+          <img src={logo} alt="" width={"100%"} height={"40vh"} />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
