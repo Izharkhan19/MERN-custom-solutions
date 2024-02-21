@@ -26,9 +26,10 @@ const Product = () => {
   const [prodId, setProdId] = useState("");
 
   const fetchData = async () => {
+    setLoading(true);
+
     setProdId("");
     try {
-      setLoading(false);
       const response = await fetch(`${API_BASE_PATH.BasePath}/product`);
       if (!response.ok) {
         throw new Error("Network response was not ok");
@@ -47,6 +48,7 @@ const Product = () => {
   }, []);
 
   const handleDelete = async (id) => {
+    setLoading(true);
     try {
       const response = await fetch(`${API_BASE_PATH.BasePath}/product/${id}`, {
         method: "DELETE",
