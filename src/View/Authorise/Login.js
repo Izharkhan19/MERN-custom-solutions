@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 import "./login.css";
 import { Link, useNavigate } from "react-router-dom";
 import { getRegisterUserList } from "../../Service/AuthLoginService";
-import { toast } from "react-toastify";
 import { ToastError, ToastSuccess } from "../../CommonComponents/Toasters";
-import Map from "../map/Map";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -27,6 +25,7 @@ const Login = () => {
             itm.userName === input.userName && itm.password === input.password
         );
         if (data.length !== 0) {
+          localStorage.setItem("authorized", true);
           navigate("/home");
           ToastSuccess("Logged in Successfully.");
         } else {
@@ -40,89 +39,70 @@ const Login = () => {
     }
   };
 
-  const FetchRegisterUsers = async () => {
-    let res = await getRegisterUserList();
-    if (res.data) {
-    } else {
-      ToastError("Something went Wrong.");
-    }
-  };
+  // const FetchRegisterUsers = async () => {
+  //   let res = await getRegisterUserList();
+  //   if (res.data) {
+  //   } else {
+  //     ToastError("Something went Wrong.");
+  //   }
+  // };
 
-  useEffect(() => {
-    FetchRegisterUsers();
-  });
+  // useEffect(() => {
+  //   FetchRegisterUsers();
+  // });
 
   return (
-    // <Form onSubmit={handleSubmit}>
-    //   <Form.Group className="mb-3">
-    //     <Form.Control
-    //       id="floatingInputCustom"
-    //       type="text"
-    //       placeholder="UserName"
-    //       onChange={(e) =>
-    //         setInput({
-    //           ...input,
-    //           userName: e.target.value,
-    //         })
-    //       }
-    //     />
-    //     {/* <Form.Label>Email address</Form.Label> */}
-    //   </Form.Group>
-    //   <Form.Group>
-    //     <Form.Control
-    //       id="floatingPasswordCustom"
-    //       type="text"
-    //       placeholder="Password"
-    //       onChange={(e) =>
-    //         setInput({
-    //           ...input,
-    //           password: e.target.value,
-    //         })
-    //       }
-    //     />
-    //     {/* <Form.Label>Password</Form.Label> */}
-    //   </Form.Group>
-    //   <button className="btn btn-primary" type="submit" disabled={handleLoding}>
-    //     Login
-    //   </button>
-    //   <div className="text-center mt-3">
-    //     <Link to={"/registeruser"}>Register User</Link>
-    //   </div>
-    // </Form>
-    <Form className="custom-form" onSubmit={handleSubmit}>
-      <Form.Group className="mb-3">
-        <Form.Control
-          id="floatingInputCustom"
-          type="text"
-          placeholder="UserName"
-          onChange={(e) =>
-            setInput({
-              ...input,
-              userName: e.target.value,
-            })
-          }
-        />
-      </Form.Group>
-      <Form.Group>
-        <Form.Control
-          id="floatingPasswordCustom"
-          type="password"
-          placeholder="Password"
-          onChange={(e) =>
-            setInput({
-              ...input,
-              password: e.target.value,
-            })
-          }
-        />
-      </Form.Group>
-      <button className="btn btn-primary" type="submit" disabled={handleLoding}>
-        Login
-      </button>
-      <div className="text-center mt-3">
-        <Link to={"/registeruser"}>Register User</Link>
-      </div>
-    </Form>
+    <>
+      <Form className="custom-form" onSubmit={handleSubmit}>
+        <h1 className="text-white mb-4">Login</h1>
+
+        <Form.Group className="mb-3">
+          <Form.Control
+            id="floatingInputCustom"
+            type="text"
+            placeholder="UserName"
+            onChange={(e) =>
+              setInput({
+                ...input,
+                userName: e.target.value,
+              })
+            }
+          />
+        </Form.Group>
+        <Form.Group>
+          <Form.Control
+            id="floatingPasswordCustom"
+            type="password"
+            placeholder="Password"
+            onChange={(e) =>
+              setInput({
+                ...input,
+                password: e.target.value,
+              })
+            }
+          />
+        </Form.Group>
+        <button
+          className="btn btn-primary"
+          type="submit"
+          disabled={handleLoding}
+        >
+          Login
+        </button>
+        <button
+          style={{ marginLeft: "15px" }}
+          className="btn btn-secondary"
+          type="button"
+          disabled={handleLoding}
+          onClick={() => navigate("/getpassword")}
+        >
+          Get Password
+        </button>
+        <div className="text-center mt-3">
+          <Link to={"/registeruser"}>Register User</Link>
+        </div>
+      </Form>
+    </>
   );
 };
 

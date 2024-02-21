@@ -10,6 +10,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ScrollToTopOnReload from "./CommonServices/ScrollToTopOnReload";
 import Preloader from "./CommonServices/PreLoader";
+import GetPassword from "./View/Authorise/GetPassword";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
           <Routes>
             <Route path={"/"} element={<Login />} />
             <Route path={"/registeruser"} element={<RegisterUser />} />
+            <Route path={"/getpassword"} element={<GetPassword />} />
             <Route path={"/*"} element={<DefaultLayout />} />
           </Routes>
         </BrowserRouter>

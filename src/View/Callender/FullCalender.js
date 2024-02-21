@@ -63,7 +63,6 @@ export default function FullCalender(props) {
 
   function handleSelectedDate(selDate) {
     setActiveSelectedDate(selDate);
-    // console.log(selDate);
 
     if (props.changeCallBack !== undefined && props.changeCallBack !== null) {
       props.changeCallBack(selDate);

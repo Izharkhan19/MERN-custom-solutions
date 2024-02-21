@@ -16,12 +16,13 @@ const RegisterUser = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     if (input.userName !== "" && input.email !== "" && input.password !== "") {
-      let res = await registeruser(input);
-      if (res.data) {
+      let response = await registeruser(input);
+      debugger;
+      if (response?.status === 200) {
         navigate("/");
         ToastSuccess("Registration Successfull");
       } else {
-        ToastError("Something went Wrong.");
+        ToastError(response?.data.message);
       }
     } else {
       ToastError("All Fields are required.");
@@ -30,6 +31,8 @@ const RegisterUser = () => {
 
   return (
     <Form className="custom-form" onSubmit={handleRegister}>
+      <h1 className="text-white mb-4">Register</h1>
+
       <Form.Group className="mb-3">
         <Form.Control
           id="floatingInputCustom"
@@ -69,19 +72,18 @@ const RegisterUser = () => {
           }
         />
       </Form.Group>
-      <Row>
-        <Col md={4}>
-          <button className="btn btn-primary" type="submit">
-            Save
-          </button>
-        </Col>
-        <Col md={4}>
-          <button className="btn btn-secondary" onClick={() => navigate("/")}>
-            Back
-          </button>
-        </Col>
-        <Col md={4}></Col>
-      </Row>
+
+      <button className="btn btn-primary" type="submit">
+        Save
+      </button>
+
+      <button
+        className="btn btn-secondary"
+        style={{ marginLeft: "15px" }}
+        onClick={() => navigate("/")}
+      >
+        Back
+      </button>
     </Form>
   );
 };

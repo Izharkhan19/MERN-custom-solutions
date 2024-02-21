@@ -25,13 +25,13 @@ const FB = () => {
       <FacebookLogin
         appId="358962536669167"
         onSuccess={(response) => {
-          console.log("Login Success!", response);
+          // console.log("Login Success!", response);
         }}
         onFail={(error) => {
-          console.log("Login Failed!", error);
+          // console.log("Login Failed!", error);
         }}
         onProfileSuccess={(response) => {
-          console.log("Get Profile Success!", response);
+          // console.log("Get Profile Success!", response);
         }}
       />
     </div>

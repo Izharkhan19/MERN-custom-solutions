@@ -92,12 +92,9 @@ const NodeCRUD = () => {
     };
     fetch(`http://localhost:3000/notes/${data}`, requestOptions)
       .then((response) => {
-        console.log(response);
         return response.json();
       })
       .then((data) => {
-        console.log(data);
-
         setHandleNotes({
           id: data._id,
           title: data.title,

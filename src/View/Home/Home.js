@@ -30,7 +30,6 @@ const Home = () => {
   ];
 
   function CalChange(data) {
-    console.log(data);
     new Date();
   }
 

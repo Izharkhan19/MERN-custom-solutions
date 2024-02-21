@@ -19,7 +19,7 @@ const ShareComponent = ({ imageUrl, linkUrl, title }) => {
           url: linkUrl,
         });
       } else {
-        console.log("Web Share API not supported");
+        // console.log("Web Share API not supported");
       }
     } catch (error) {
       console.error("Error sharing:", error.message);
@@ -80,12 +80,11 @@ const ShareComponent = ({ imageUrl, linkUrl, title }) => {
   &scope={"user_profile,user_media"}
   &response_type=code`;
 
-    debugger;
     try {
       const response = await fetch(uri1);
 
       const data = await response.json();
-      console.log("Media shared successfully:", data);
+      // console.log("Media shared successfully:", data);
     } catch (error) {
       console.error("Error sharing on Instagram:", error);
     }

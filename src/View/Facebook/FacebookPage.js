@@ -31,7 +31,6 @@ const FacebookPage = () => {
   }, []);
 
   const FetchData = async () => {
-    debugger;
     let res = await axios(
       `https://graph.facebook.com/facebook/picture?redirect=false`
     );
@@ -74,7 +73,7 @@ const FacebookPage = () => {
                 handleLogin(provider, data);
               }}
               onReject={(err) => {
-                console.log(err);
+                // console.log(err);
               }}
             >
               {/* <FacebookLoginButton /> */}

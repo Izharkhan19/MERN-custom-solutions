@@ -9,7 +9,6 @@ function ChatGPT() {
     try {
       setIsLoading(true);
       let totalPost = document.getElementsByClassName("data-post");
-      debugger;
       let body = {
         timezone: "Asia/Kolkata",
         latitude: "",
@@ -35,7 +34,7 @@ function ChatGPT() {
       );
       let response = resData.data.list;
       // setData((prevData) => [...prevData, ...response]);
-      debugger;
+
       let a = data;
       let OldPostID = "";
       a.forEach((element) => {
@@ -46,7 +45,7 @@ function ChatGPT() {
           a.push(element);
         }
       });
-      debugger;
+
       setData([...a]);
     } catch (error) {
       console.error("Error fetching data: ", error);

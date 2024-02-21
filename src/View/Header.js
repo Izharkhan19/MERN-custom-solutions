@@ -77,7 +77,7 @@ function BasicExample() {
             >
               Map
             </Nav.Link>
-            {/* <Nav.Link onClick={() => navigate("/chat-gpt")}>Chat-GPT</Nav.Link> */}
+            <Nav.Link onClick={() => navigate("/product")}>Product</Nav.Link>
             {/* <Nav.Link onClick={() => navigate("/register-signin")}>Facebook</Nav.Link> */}
           </Nav>
         </Navbar.Collapse>
@@ -88,6 +88,7 @@ function BasicExample() {
               variant="transparent"
               className="logout-button ms-2"
               onClick={() => {
+                localStorage.clear();
                 navigate("/");
                 ToastSuccess("Logged out Successfully.");
               }}

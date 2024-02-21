@@ -20,7 +20,6 @@ const Mainpage = () => {
     //   },
     // });
     if (res?.data) {
-      console.log("Chaar", res);
       await FetchDependentData(res.data);
     } else {
       ToastError("Somethin went wrong.");
@@ -34,7 +33,6 @@ const Mainpage = () => {
     );
 
     if (res?.data) {
-      console.log("Fivey", res);
       setData(res.data);
     } else {
       ToastError("Somethin went wrong.");
