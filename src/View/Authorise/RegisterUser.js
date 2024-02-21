@@ -74,7 +74,7 @@ const RegisterUser = () => {
       </Form.Group>
 
       <button className="btn btn-primary" type="submit">
-        Save
+        Register
       </button>
 
       <button

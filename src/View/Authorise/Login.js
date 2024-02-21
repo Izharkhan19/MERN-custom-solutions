@@ -96,7 +96,7 @@ const Login = () => {
           disabled={handleLoding}
           onClick={() => navigate("/getpassword")}
         >
-          Get Password
+          Get Forgetted Details
         </button>
         <div className="text-center mt-3">
           <Link to={"/registeruser"}>Register User</Link>
